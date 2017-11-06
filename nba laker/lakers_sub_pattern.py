@@ -64,7 +64,19 @@ def getLakerSub(espn_url):
     #     print(sub)
     return comb_list
 
+#10/19 vs(home) LAC clippers L 92-108
 vsClippersSub = getLakerSub("http://www.espn.com/nba/playbyplay?gameId=400974442")
 
-for i in vsClippersSub:
-    print(i)
+for sub in vsClippersSub:
+    print(sub)
+
+#10/20 @(away) PHX suns W 132-130
+vsSunsSub = getLakerSub("http://www.espn.com/nba/playbyplay?gameId=400974777")
+for sub in vsSunsSub:
+    print sub
+#10/22 vs NO new orleans L 112-119
+vsPelicansSub = getLakerSub("http://www.espn.com/nba/playbyplay?gameId=400974791")
+
+for sub in vsPelicansSub:
+    print sub
+
