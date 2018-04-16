@@ -1,0 +1,76 @@
+money ball
+
+baseball
+
+in the year 2001, 3 key players left oakland A's ( the lost boys).
+Billy Beane, the team's general manager used statstics to create a good team with low budget
+moneyball book - written by michael luis
+later movie by brad pitt 
+https://en.wikipedia.org/wiki/Moneyball
+3rd lowest salary cap
+The team is most famous, however, for winning 20 consecutive games between August 13 and September 4, 200
+
+sean lahaman's website for data
+readme2013.txt / explain the acronyms
+
+create 3 features
+-batting avg
+-on base %
+-slugging %
+
+baseball
+
+3 strike out,
+3 out switch
+
+points = run
+
+
+Rstudio
+import,
+head ,
+str //structure , we see almost 100,000 obs and 24 variable 
+x2b - added when imported because numbers are for indexing
+head(Batting$AB)
+
+so now we need to make 3 new variables
+BA - batting avg
+Batting$BA <- Batting$H / Batting$AB
+new BA is created
+
+2nd variable we need is on base percent 
+OBP= {H+BB+HBP}/{AB+BB+HBP+SF}
+// 
+
+
+//
+
+3rd variale
+slugging percentage
+{\displaystyle \mathrm {SLG} ={\frac {({\mathit {1B}})+(2\times {\mathit {2B}})+(3\times {\mathit {3B}})+(4\times {\mathit {HR}})}{AB}}}
+SLG = [1*1B +2*2B +3*3B +4*hr]/AB
+
+In baseball statistics, slugging percentage (SLG) is a popular measure of the power of a hitter. 
+It is calculated as total bases divided by at bats:
+
+For example, in 1920, Babe Ruth played his first season for the New York Yankees.
+ In 458 at bats, Ruth had 172 hits, comprising 73 singles, 36 doubles, 9 triples, and 54 home runs,
+ which brings the total base count to (73 × 1) + (36 × 2) + (9 × 3) + (54 × 4) = 388.
+ His total number of bases (388) divided by his total at-bats (458) is .847, his slugging percentage for the season,
+ setting a record that stood until 2001,
+ when Barry Bonds achieved 411 bases in 476 at-bats, bringing his slugging percentage to .863, unmatched since.
+
+
+// import salary
+
+//we want player after 1985 
+
+//merge the two data
+combo <- merge(batting, sal ,by = c('playerID', 'yearID'))
+
+
+
+
+
+
+

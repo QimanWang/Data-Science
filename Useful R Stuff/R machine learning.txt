@@ -1,0 +1,1213 @@
+1.1
+1.2 
+
+visualiztion
+capstone project
+machine learning
+
+1.3 data scientist
+exploded demand
+-more data , large computing service power, new programming tool(r)
+huge skill demand, 
+
+1.4
+
+2.7 install R studio 
+
+6.10 learn basic
+all training exercise is in trainging exerise folder
+
+11. zip tour
+
+12. rstudio guide
+consle 
+environment - list all stuff in code
+files - pc stuff 
+
+assign variable a and value 2
+getwd() //get working directly
+setwd("c:/)//set dw
+
+work with r script
+new r script //like new python file py
+run only runs one line at a time
+source runs all
+global options
+
+13. intro to R basic
+
+14.Arithmetic in R 
+
+1 +2 = 3
+3 - 2 = 1
+1/2 = .5
+2/3 = .6666667 true division
+2^4 = 8
+100*2 + 50/2 = 225
+100 * (2+50)/2 = 2600
+5/2 = 2.5
+5%%2 = 1 //5 mod 2
+
+15. variable
+
+#comment // in console and script
+bank < - 100 
+bank // print 100
+3 naming convention
+bank.account //best
+bankAccount //fine
+bank_account // bad
+deposit <- 20
+> bank.account <- 100
+> bank.account <- bank.account+deposit
+> bank.account
+120 // and environment updates
+
+16. R data type
+-numeric type 
+2.2 , 5, 7,
+-logical type
+TRUE , FALSE, T , F ,
+a <- 2.2
+> a <- T
+> a<- t // confuse as a function
+-character aka string
+'hello' // prints "hello" 
+both work using "hello" is better conventional
+> 'hello'
+[1] "hello"
+> a<-'hello'
+> b<-"hello"
+> class(a)
+[1] "character"
+> class(12)
+[1] "numeric"
+> class(32.2)
+[1] "numeric"
+> class(T)
+[1] "logical"
+
+17. vector basics
+
+> nvec <- c(1,2,3,4,5,)
+Error in c(1, 2, 3, 4, 5, ) : argument 6 is empty
+> nvec <- c(1,2,3,4,5)
+> nvec
+[1] 1 2 3 4 5
+> class(nvec)
+[1] "numeric"
+> cvector <- c("u","s","A")
+> cvector
+[1] "u" "s" "A"
+> class(cvector)
+[1] "character"
+> V <- c(T,20,40)
+> v
+Error: object 'v' not found
+> V
+[1]  1 20 40
+> class(V)
+[1] "numeric"
+> v1 <- c('usa',20,31)
+> v1
+[1] "usa" "20"  "31" 
+> class(v1)
+[1] "character"
+> temps <- c(72,71,68,73,69,76)
+> temps
+[1] 72 71 68 73 69 76
+> names(temps) <- c('mon','tue','wed','thu','fri','sat','sun')
+Error in names(temps) <- c("mon", "tue", "wed", "thu", "fri", "sat", "sun") : 
+  'names' attribute [7] must be the same length as the vector [6]
+> 
+> temps <- c(72,71,68,73,69,75,76)
+> names(temps) <- c('mon','tue','wed','thu','fri','sat','sun')
+> temps
+mon tue wed thu fri sat sun 
+ 72  71  68  73  69  75  76 
+> days <- c('mon','tue','wed','thu','fri','sat','sun')
+> names(temps) <- days
+> temps
+mon tue wed thu fri sat sun 
+ 72  71  68  73  69  75  76 
+combine function, vector name, days assign name
+
+
+18. vector operations
+
+> v1 <- c(1,2,3)
+> v2 <-c(5,6,7)
+> v1 + v2
+[1]  6  8 10
+> v1 - v2
+[1] -4 -4 -4
+> v2-v1
+[1] 4 4 4
+> v1*v2
+[1]  5 12 21
+> v1/v2
+[1] 0.2000000 0.3333333 0.4285714
+> sum(v1)
+[1] 6
+> sum.of.vec <- sum(v1)v 
+> sum.of.vec
+[1] 6
+> mean(v1)
+[1] 2
+> sd(v1) // standard deviation of all element 
+[1] 1
+> max(v1)
+[1] 3
+> min(v1)
+[1] 1
+> prod(v1)
+[1] 6
+> prod(v2) //prof of all vec element
+[1] 210
+// cran refcard to see more build in functions
+
+~~~~~~~~~~19. vector indexing and slicing
+> v1 <- c(100,200,300)
+> v2<- c('a','b','c')
+> v1
+[1] 100 200 300
+> v2
+[1] "a" "b" "c"
+> v1[2]
+[1] 200
+> v2[3]
+[1] "c"
+> v1
+[1] 100 200 300
+> v2
+[1] "a" "b" "c"
+> v1[c(1,2)]
+[1] 100 200
+> v2[x(1,3)]
+Error: could not find function "x"
+> v2[c(1,3)]
+[1] "a" "c"
+>
+
+slicing time
+> v <- c(1,2,3,4,5,6,7,8,9,10)
+//there's shorter ways , but ill save u for later
+> v <- c(1,2,3,4,5,6,7,8,9,10)
+> v
+ [1]  1  2  3  4  5  6  7  8  9 10
+> v[2:4]
+[1] 2 3 4
+> v[7;10]
+Error: unexpected ';' in "v[7;"
+> v[7:10]
+[1]  7  8  9 10
+> printf('index function using name and slice')
+Error: could not find function "printf"
+> print('index function using name and slice')
+[1] "index function using name and slice"
+> v<- c(1,2,3,4)
+> names(v) <- c('a','b','c','d')
+> v
+a b c d 
+1 2 3 4 
+> v[2]
+b 
+2 
+> v[b]
+<NA> 
+  NA 
+> v['b']
+b 
+2 
+> v[c('c','d','a')]
+c d a 
+3 4 1 
+> 
+
+//comparison operator to filter out ele from vec
+boolean logical masking
+to filter out result we dont want
+
+> v
+a b c d 
+1 2 3 4 
+> v>2
+    a     b     c     d 
+FALSE FALSE  TRUE  TRUE 
+> v[v>2]
+c d 
+3 4 
+> my.filter <- v>2
+> my.filter
+    a     b     c     d 
+FALSE FALSE  TRUE  TRUE 
+> v[my.filter]
+c d 
+3 4 
+> 
+//overview bracket notation to access
+//pasing vector in bracket
+//colin to slice
+//index using name
+//filter
+
+~20. getting help with R
+> help('vector')
+> ??numeric
+> 
+> help.search('vector')
+
+//google is your friend
+
+~21.comparison operator
+> 5>6
+[1] FALSE
+> 5<6
+[1] TRUE
+> 5<+6
+[1] TRUE
+> 5<=6
+[1] TRUE
+> 5>=6
+[1] FALSE
+> 2 ==3
+[1] FALSE
+> 2=2
+Error in 2 = 2 : invalid (do_set) left-hand side to assignment
+> 2==2
+[1] TRUE
+> 2 !=4
+[1] TRUE
+> 2!2 true
+Error: unexpected '!' in "2!"
+> 2!= 2
+[1] FALSE
+> v <-2
+> v
+[1] 2
+> v < -1
+[1] FALSE
+> v<-1
+> v
+[1] 1
+> my.var <- 2
+> my.var < -10
+[1] FALSE
+> my.var
+[1] 2
+> v <- c(1,2,3,4,5)
+> v<2
+[1]  TRUE FALSE FALSE FALSE FALSE
+> v == 3
+[1] FALSE FALSE  TRUE FALSE FALSE
+> v
+[1] 1 2 3 4 5
+> v2 <- c(10,20,30,40,50)
+> v < v2
+[1] TRUE TRUE TRUE TRUE TRUE
+> 
+
+~22. exercise
+
+~23 solution
+
+max(stock.prices) , return 34, 
+to get the date,
+stock.prices[stock.prices == 34]
+or better way
+stock.prices[stock.prices == max(stock.prices)]
+
+~24. r matrices
+
+~25. creating a matrix
+
+1> 1:10 
+1 2 3 4 5 6 7 8 9 10
+> v <- 1:10
+
+>matrix(v) 
+print 10 by 1
+
+>matrix (v, nrow = 2) 
+
+2 row by 5 column
+1	3	5	7	9
+2	4	6	8	10
+
+>matrix(1:12,byrow = false, nrow = 4)
+1	5	9
+2	6	10
+3	7	11
+4	8	12
+
+>matrix(1:12,byrow = TRUE, nrow = 4)
+1	2 	3
+4	5	6
+7	8	9
+10	11	12
+
+RSCRIPT
+goog <- c(450,451,452,445,468)
+msft <- c(230,231,232,233,220)
+
+stocks <- c(goog,msft)
+
+print(stocks)
+ [1] 450 451 452 445 468 230 231 232
+ [9] 233 220
+> stocks.matrix <- matrix(stocks, byrow = T, nrow = 2)
+> print(stocks.matrix)
+     [,1] [,2] [,3] [,4] [,5]
+[1,]  450  451  452  445  468
+[2,]  230  231  232  233  220
+
+days <- c('mon','tue'  )
+st.name <- ('goog','msft')
+
+colnames(stocks.matrix) <- days
+rownames(stocks.matrix) <-st.name
+
+print(stocks.matrix)
+   mon tue wed thur fri
+goog 450 451 452  445 468
+msft 230 231 232  233 220
+
+~ lecture 26 Matrix arithmetic 
+> mat <- matrix(1:25, byrow = T, nrow =5)
+> mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    2    3    4    5
+[2,]    6    7    8    9   10
+[3,]   11   12   13   14   15
+[4,]   16   17   18   19   20
+[5,]   21   22   23   24   25
+> mat/2
+     [,1] [,2] [,3] [,4] [,5]
+[1,]  0.5  1.0  1.5  2.0  2.5
+[2,]  3.0  3.5  4.0  4.5  5.0
+[3,]  5.5  6.0  6.5  7.0  7.5
+[4,]  8.0  8.5  9.0  9.5 10.0
+[5,] 10.5 11.0 11.5 12.0 12.5
+> mat*2
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    2    4    6    8   10
+[2,]   12   14   16   18   20
+[3,]   22   24   26   28   30
+[4,]   32   34   36   38   40
+[5,]   42   44   46   48   50
+> 1/mat
+           [,1]       [,2]
+[1,] 1.00000000 0.50000000
+[2,] 0.16666667 0.14285714
+[3,] 0.09090909 0.08333333
+[4,] 0.06250000 0.05882353
+[5,] 0.04761905 0.04545455
+           [,3]       [,4]
+[1,] 0.33333333 0.25000000
+[2,] 0.12500000 0.11111111
+[3,] 0.07692308 0.07142857
+[4,] 0.05555556 0.05263158
+[5,] 0.04347826 0.04166667
+           [,5]
+[1,] 0.20000000
+[2,] 0.10000000
+[3,] 0.06666667
+[4,] 0.05000000
+[5,] 0.04000000
+
+> mat >15
+      [,1]  [,2]  [,3]  [,4]
+[1,] FALSE FALSE FALSE FALSE
+[2,] FALSE FALSE FALSE FALSE
+[3,] FALSE FALSE FALSE FALSE
+[4,]  TRUE  TRUE  TRUE  TRUE
+[5,]  TRUE  TRUE  TRUE  TRUE
+      [,5]
+[1,] FALSE
+[2,] FALSE
+[3,] FALSE
+[4,]  TRUE
+[5,]  TRUE
+> mat >15
+      [,1]  [,2]  [,3]  [,4]  [,5]
+[1,] FALSE FALSE FALSE FALSE FALSE
+[2,] FALSE FALSE FALSE FALSE FALSE
+[3,] FALSE FALSE FALSE FALSE FALSE
+[4,]  TRUE  TRUE  TRUE  TRUE  TRUE
+[5,]  TRUE  TRUE  TRUE  TRUE  TRUE
+> mat +mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    2    4    6    8   10
+[2,]   12   14   16   18   20
+[3,]   22   24   26   28   30
+[4,]   32   34   36   38   40
+[5,]   42   44   46   48   50
+> mat/mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    1    1    1    1
+[2,]    1    1    1    1    1
+[3,]    1    1    1    1    1
+[4,]    1    1    1    1    1
+[5,]    1    1    1    1    1
+> mat^mat
+             [,1]         [,2]         [,3]
+[1,] 1.000000e+00 4.000000e+00 2.700000e+01
+[2,] 4.665600e+04 8.235430e+05 1.677722e+07
+[3,] 2.853117e+11 8.916100e+12 3.028751e+14
+[4,] 1.844674e+19 8.272403e+20 3.934641e+22
+[5,] 5.842587e+27 3.414279e+29 2.088047e+31
+             [,4]         [,5]
+[1,] 2.560000e+02 3.125000e+03
+[2,] 3.874205e+08 1.000000e+10
+[3,] 1.111201e+16 4.378939e+17
+[4,] 1.978420e+24 1.048576e+26
+[5,] 1.333736e+33 8.881784e+34
+> mat*mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]    1    4    9   16   25
+[2,]   36   49   64   81  100
+[3,]  121  144  169  196  225
+[4,]  256  289  324  361  400
+[5,]  441  484  529  576  625
+> 
+> mat %*% mat
+     [,1] [,2] [,3] [,4] [,5]
+[1,]  215  230  245  260  275
+[2,]  490  530  570  610  650
+[3,]  765  830  895  960 1025
+[4,] 1040 1130 1220 1310 1400
+[5,] 1315 1430 1545 1660 1775
+
+~lecture 27 matrix operations
+
+> colSums(stocks.matrix)
+ mon  tue  wed thur  fri 
+ 680  682  684  678  688 
+> rowSums(stocks.matrix)
+goog msft 
+2266 1146 
+> rowMeans(stocks.matrix)
+ goog  msft 
+453.2 229.2 
+> colMeans(stocks.matrix)
+ mon  tue  wed thur  fri 
+ 340  341  342  339  344 
+
+ FB <- c(111,112,113,120,145)
+> tech.stocks <- rbind(stocks.matrix,FB)
+> tech.stocks
+     mon tue wed thur fri
+goog 450 451 452  445 468
+msft 230 231 232  233 220
+FB   111 112 113  120 145
+> avg <- rowMeans(tech.stocks)
+> avg
+ goog  msft    FB 
+453.2 229.2 120.2 
+> tech.stocks <-cbind(tech.stocks, avg)
+> tech.stocks
+     mon tue wed thur fri   avg
+goog 450 451 452  445 468 453.2
+msft 230 231 232  233 220 229.2
+FB   111 112 113  120 145 120.2
+
+~ 28.matrix selection and indexing
+
+ > v <- c(1:5)
+> v[2]
+[1] 2
+>  mat <- matrix (1:50, byrow = T, nrow = 5 )
+> mat
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+[1,]    1    2    3    4    5    6    7    8
+[2,]   11   12   13   14   15   16   17   18
+[3,]   21   22   23   24   25   26   27   28
+[4,]   31   32   33   34   35   36   37   38
+[5,]   41   42   43   44   45   46   47   48
+     [,9] [,10]
+[1,]    9    10
+[2,]   19    20
+[3,]   29    30
+[4,]   39    40
+[5,]   49    50
+> mat[1,]
+ [1]  1  2  3  4  5  6  7  8  9 10
+> mat[,1]
+[1]  1 11 21 31 41
+> mat[1:3,]
+     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]
+[1,]    1    2    3    4    5    6    7    8
+[2,]   11   12   13   14   15   16   17   18
+[3,]   21   22   23   24   25   26   27   28
+     [,9] [,10]
+[1,]    9    10
+[2,]   19    20
+[3,]   29    30
+> mat[1:2,1:3]
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]   11   12   13
+> mat[,9:10]
+     [,1] [,2]
+[1,]    9   10
+[2,]   19   20
+[3,]   29   30
+[4,]   39   40
+[5,]   49   50
+
+~30. factor and categorical matrices
+factor function
+
+nomial - no order, 
+ordinal - have order
+> animal <- ('c','d','d','c','c')
+Error: unexpected ',' in "animal <- ('c',"
+> animal <- c('c','d','d','c','c')
+> id <- c(1:5)
+> factor(animal)
+[1] c d d c c
+Levels: c d
+> fact.ani <- factor(animal)
+> ord.cat <- c('cold','med','hot')
+> temps <- c('cold','med','hot','hot','hot','cold','med')
+> temps
+[1] "cold" "med"  "hot"  "hot"  "hot" 
+[6] "cold" "med" 
+> fact.temp <- factor (temps.ordered = T,levels = c('cold','med','hot'))
+Error in factor(temps.ordered = T, levels = c("cold", "med", "hot")) : 
+  unused argument (temps.ordered = T)
+> fact.temp <- factor (temps,ordered = T,levels = c('cold','med','hot'))
+> fact.temp
+[1] cold med  hot  hot  hot  cold med 
+Levels: cold < med < hot
+> summary(fact.temp)
+cold  med  hot 
+   2    2    3 
+> summary (temps)
+   Length     Class      Mode 
+        7 character character 
+
+
+~30 matrix training exercise
+runif
+
+~32 intro to data frames
+
+~33 data frame basics
+state.x77
+USPersonalExpenditure
+head(state.x77)
+tail(state.x77)
+str()
+summary()
+women
+data() //list of all data frame
+
+//create a data frame
+days <- c('mon','tue','wed','thur','fri')
+> temp <- c(22.2,21,23,24.3,25)
+> rain <- c(T,T,F,F,T)
+> data.frame(days,temp,rain)
+
+~34 data frames selection and indexing
+
+df <-data.frame(days,temp,rain)
+df[1,]
+df[,1]
+df['rain']
+df[1:5,c('days','temp']
+df$days return vector
+df$days return data frame
+
+subset(df,subset = rain == T)
+  days temp rain
+1  mon 22.2 TRUE
+2  tue 21.0 TRUE
+5  fri 25.0 TRUE
+> subset(df,subset = temp >23 )
+  days temp  rain
+4 thur 24.3 FALSE
+5  fri 25.0  TRUE
+> sorted.temp <- order(df['temp'])
+> sorted.temp
+[1] 2 1 3 4 5
+> df[sorted.temp,]
+  days temp  rain
+2  tue 21.0  TRUE
+1  mon 22.2  TRUE
+3  wed 23.0 FALSE
+4 thur 24.3 FALSE
+5  fri 25.0  TRUE
+> desc.temp <- order (-df['temp'])
+> desc.temp
+[1] 5 4 3 1 2
+> df(desc.temp,)
+Error in df(desc.temp, ) : argument "df1" is missing, with no default
+> df[desc.temp,]
+  days temp  rain
+5  fri 25.0  TRUE
+4 thur 24.3 FALSE
+3  wed 23.0 FALSE
+1  mon 22.2  TRUE
+2  tue 21.0  TRUE
+desc.temp <- order (df$temp)
+> desc.temp
+~ 35 dataframe operations
+
+
+~40. DATA INPUT AND OUTPUT
+~41. csv iput and output (comma seperated variable)
+write.csv(mtcars,file = 'my_examplecsv.csv')
+//write.csv (//df name = //'file name')
+ex <- read.csv('//file name') // tab to auto complete 
+//help("read.csv")
+
+~41. excel files with r
+install.packaes("readxl")
+library(readxl) // load excel
+xcel_sheets('//filename') //list all sheets
+df<- read_excel('filename',sheet = "sheetnumber") // read excel
+
+we can combine sheets into a list
+lapply /// applys it to all things in the list
+entire.workbook <- lapply(excel_sheets('sample-sales-data.xlsx'),read_excel, path="sample-sales-dara.xlsx")
+//read entire exel file into a list
+
+//write to excel requires another package
+install.packages('xlsx')
+library(xlsx)
+//load all requires package
+write.xlsx(df,"filename.xlsx") // write to excel
+
+~43.Sql with R
+//too many sequal, general
+// need packages
+// google R+ postgresql //seach for cranpackage
+fiind package name, scroll to reference manual 
+//documentation of command
+jump to rstudio install.packages('RpostgreSQL')
+library(RpostgreSQL)
+help(RRpostgreSQL)
+??RpostgreSQL //show info
+shows up in help tab and find what u need
+r-bloggers // tutorials 
+r jobs
+connectiion with r
+~44. web scraping
+//unique to personal use
+auto scraping/ import.io //auto extracting data from site
+//smalll use case is free
+rvest library 
+extract from html pipe from tags
+emo (package = 'rvest')
+
+~45. intro to r programming basics
+
+~46. logical operator
+& and , as many contion as you want 
+| or ,
+! not,
+ex:
+df[df$mpg >20,]
+df[df$mpg >20. 'mpg']
+another way
+subset(df,mpg > 20)
+
+df[(df$mpg >20) & (df$hp >100),]
+
+~ 47. if, else if
+x <- 10
+if(x==10){
+  print('x is equal to 10')
+} else if(x==12){
+  print('x is equal to 12')
+}
+
+~48. conditional statements training exercise
+
+~49. 
+1.
+2.
+3. print 3 in order,
+compare first 2, then insert the 3rd in the correct order
+4. print max,x1 with all otehr xn . then x2 with all other
+once all the things are good, you get one less condition 
+
+
+print(paste0('x is : ' , x))
+
+~50. while loops
+
+x <- 0 
+while (c<10) {
+print(paste0('x is : ' , x))
+
+x <- x+1
+}
+
+brake // break keyword
+
+~51. for loops
+v <- c(1,2,3)
+
+for (variable in v){
+  print(variable)
+}
+
+//
+my.list <- list(c(1:3), mtcars,12)
+for (item in my.list){
+print(item)
+}
+
+//
+matv <- matrix(1:25,nrow = 5)
+for (eewe in matv){
+  print(eewe)
+}
+go thru colum , and print 1 by 1
+// nested for
+mat <- matrix(1:25,nrow = 5)
+for (row in 1:nrow(matv)){
+  for(col in 1:ncol(matv)){
+    print(paste('row: ',row,'and col',col,'is',mat[row,col]))
+  }
+}
+
+~52. functions
+//
+name_of_fun <- function (input 1,input 2, input 3 = 45){
+  result <- input1 + input2
+  return(result)
+}
+
+//  
+
+~53. function exercise
+
+~54. function solution
+
+ex:3
+num_check <- function(int, vec){
+  val <- 0
+  for(item in vec)
+    if(int == item){
+      val <- val+1 
+    }
+  if (val ==0){
+    return(F)
+  }else return(T)
+  
+}
+int <- 4
+vec <- c(1,2,5)
+print(num_check(int,vec))  
+//shorter way 
+num_check <- function(num,v){
+    for (item in v){
+        if (item == num){
+            return(TRUE)
+        }
+    }
+    return(FALSE)
+}
+
+//round() ,return cieling or floor of a decimal number
+
+
+ex4: 
+bar_count <- function (weight){
+  five_kg_bar = round(weight/5)
+  one_kg_bar = weight%%5
+  return(five_kg_bar+one_kg_bar)
+  
+}
+print(bar_count(17))
+
+ex5: append(x, values, after = length(x))
+
+append = adding onto a linked list
+out <- append(int1,out)
+
+~55. intro to advanced r programming
+
+~56. build in r features
+seq(0,20,by=2)
+//create a sequence with begining and ending, increment by
+sort() // sorts a vector
+sort(v,decreasing = T)
+//treats lower and cap alphabet as same, 
+if 2 letter is same, lower then cap 
+str(v)
+//display structure of an object ex: 1:7 
+append( v1, v2)
+//adds v2 to back of v1
+sort(append (v1,v2)) 
+//can sort a append list
+as.list(v) 
+//converts the object
+
+~ 57. Apply
+
+
+lapply(name_of_vector,function_name)
+//list apply , apply function to every element and print out list
+sapply () // return a vector
+
+#anonymous functions
+//dont want to create a function , only use it once.
+lemda expression in python.
+v <- 1:5
+
+result <- sapply(v,function(num){num*2}) // times2
+//multiple parameter in function
+sapply(v,add_choice,choice = 100) // declare the parameter
+
+
+
+~ 58. Math functions with R
+abs(): computes the absolute value.
+sum(): returns the sum of all the values present in the input.
+mean(): computes the arithmetic mean.
+round(): rounds values (additional arguments to nearest)
+round(23.1231234,2) // 2 digit after decimal
+
+abs(x)	absolute value
+sqrt(x)	square root
+ceiling(x)	ceiling(3.475) is 4
+floor(x)	floor(3.475) is 3
+trunc(x)	trunc(5.99) is 5
+round(x, digits=n)	round(3.475, digits=2) is 3.48
+signif(x, digits=n)	signif(3.475, digits=2) is 3.5
+cos(x), sin(x), tan(x)	also acos(x), cosh(x), acosh(x), etc.
+log(x)	natural logarithm
+log10(x)	common logarithm
+exp(x)	e^x
+
+
+~ 59.regular expression
+pattern searching  in a string/ vector of string
+
+text <- "Hi there, do you know who you are voting for?"
+grepl('voting' , text) 
+true // if pattern found
+grep('element' , vector name)
+//return the index if pattern found
+
+~ 60. dates and timestamps
+Sys.Date() // "2016-09-14"
+date object
+
+//if format is not 4-2-2, it wont accept it
+Code	Value
+%d	Day of the month (decimal number)
+%m	Month (decimal number)
+%b	Month (abbreviated)
+%B	Month (full name)
+%y	Year (2 digit)
+%Y	Year (4 digit)
+
+as.Date("Nov-03-90",format="%b-%d-%y")
+"1990-11-03"
+
+as.POSIXct("11:02:02",format = "%H:%M:%S")
+[1] "2016-09-14 11:02:02 EDT"
+
+~61. data manipulation overview
+
+~62. guide to using dplyr
+install.packages('dplyr')
+install.packages('nycflights13')
+
+library('dplyr') masked meaning to override r
+
+head(flights)
+summary(flights)
+//functions
+1.head(filter(flights,month==11,day==3,carrier =='AA'))
+select all data from flight, on 11-3, carier = AA
+//better than build in subset
+
+2.slice(flights,1:10)
+//first 10 line
+
+3.head(arrange(flights,year,month,day,air_time))
+//parameters to order
+desc() to make a parameter descending
+
+~63. guide to using dplyr - part 2
+
+4.head(select(flights,carrier))
+//select specific column 
+
+5.head(rename(flights, airline_carriers = carrier))
+//rename a column name
+
+6.distinct(select(flights,carrier))
+//grab all unique carrier
+
+7.head(mutate(flights, new_col = arr_delay - dep_delay))
+//return daTa frame and new column 
+
+8.head(transmute'ddf(flights, new_col = arr_delay - dep_delay))
+//return only new column
+
+9.//group by sql language
+summarise(flights, avg_air_time = mean(air_time,na.rm = T))
+//return the colum we want back as a new name nad the data frame
+summarise (flights,total_time = sum(air_time, na.rm = T))
+//quickly collaps a column and return sum
+
+10.sameple_n(flights, 10)
+//sample m samples from total data frame
+ 
+11. sample_frac(flights,.1)
+return 10% of total data frame
+
+~64.pipe operator
+//useful in dplyr library
+
+df <- mtcars
+
+result <- arrange(sample_n(filter(df,mpg >20),size = 5),desc(mpg))
+print(result)
+//too hard to read
+df <- mtcars
+
+a <- filter(df, mpg >20)
+b <- sample_n(a,size = 5)
+result <- arrange(b,desc(mpg))
+print(result)
+//better but too much memory wasted
+//so lets use pipe operator  %>% , chain operations
+df <- mtcars
+
+result <- df %>% filter(mpg >20) %>% sample_n(size = 5) %>% arrange(desc(mpg))
+
+print(result)
+
+~65. dplyr training exercise
+
+~66. dplyr training exercise solution
+
+distinct() // return all possible value 
+
+
+~67. guide to using tidyr
+//how to clean 
+install.packages('tidyr')
+install.packages('data.table')
+//data.table is similaar to data.frame
+gather(df,quarter,revenue,qtr1:qtr4)
+stack the qrt1 to qtr4 to name ir as revenue column
+
+spread()
+
+seperate(df, col , into = , sep)
+into, sep , defult: seperate by alpha numeric
+
+unite()
+
+
+~lecture 68 gg plot
+//idea of building layer
+data , aesthetics, geometrics
+library(ggplot2
+
+//3 more layers
+facets (seperate the geo plot by a n number of cyl)
+statstics_smooth
+coord_cartesian (xlim = c(15,25)
+// final layer theme
+//font size, blah blah
+
+~69. histogram
+ggplot cheat sheet
+install.packages('ggplot2')
+install.packages('ggplot2movies')
+
+//prints the frequency of histogram
+#data and aesthetics
+pl<- ggplot(movies,aes(x = rating))
+print(pl + geom_histogram())
+
+//#data and aesthetics
+pl<- ggplot(movies,aes(x = rating))
+pl2 <- (pl + geom_histogram(fill = 'green',color = 'black',binwidth = 0.1, alpha = 0.3))
+pl3 <- pl2 + xlab(' lit') + ylab('cc')
+print(pl3 + ggtitle('ay title'))
+//alpha = transparency
+
+aes(fill = ..count..) added to geo will have a light color concentration in middle  
+
+~70.scatter plots
+//aes() can be plot by other feature
+
+df <- mtcars
+
+pl <- ggplot(df, aes(x = wt, y = mpg ))
+print( pl + geom_point(size = 10, alpha = .5))
+
+geom_point( aes(size = factor(cyl)))
+//size depends on the extra variable
+//shape
+//hex color code
+//scale color gradient
+// low color, high color
+scale_color_gradient(low = 'blue', high = 'red')
+
+
+~71. barplots // discrete
+df <- mpg
+
+pl <- ggplot(df, aes(x = class))
+print( pl + geom_bar(aes(fill = drv), position ='dodge'))
+// fill: seperate by variable , stacked
+//dodge = seperate side by side
+//position = "fill" : fills it to 0 to 1 % 
+
+~72. boxplots // box and whisker // detetcs outliers
+
+df <- mtcars
+
+pl <- ggplot(df, aes(x=factor(cyl),y=mpg))
+
+print(pl + geom_boxplot(aes( fill = factor(cyl))) + coord_flip()+theme_dark())
+
+~73. 2 variable plotting
+
+pl <- ggplot(movies, aes(x=year, y = rating))
+
+print (pl + geom_bin2d() )
+//heat map 
+
+
+//hex shape
+geom_hex
+
+// level curve density
+geom_density
+
+~74. coordinate and faceting // break into smaller pieces
+library(ggplot2)
+pl <- ggplot(mpg, aes(x=displ, y =hwy)) +geom_point()
+
+pl2 <- pl + coord_cartesian(xlim = c(1,4), ylim = c(15,30))
+
+print(pl2)
+
+
+//fix cooord
+coord_cartesian(xlim = c(1,4), ylim = c(15,30))
+//ratio
+coord_fixed(ratio = 1/3)
+
+facet_grid ( x, y) 
+ex: facet_grid( drv ~ .) . : all 
+
+//2d facet
+
+library(ggplot2)
+pl <- ggplot(mpg, aes(x=displ, y =hwy)) +geom_point()
+
+pl2 <- pl + facet_grid(drv ~ cyl)
+
+print(pl2 )
+
+
+~75. themes
+// one way to do for all
+theme_set(theme_minimal())
+
+// seocnd way , for certain part 
+print(pl + theme_dark())
+
+install.packages('ggthemes')
+// adds more themes
+
+~76 exercise
+
+~77 solution
+
+~78 data visualization project exercise
+
+~79 data visualization solution and steps
+
+library(data.table) // faster to read in data and you can drop lines
+
+df <- fread('filename.csv',drop = 1 ) // somehow drops lines
+
+pl <- ggplot(df,aes(x = CPI,y= HDI,color = Region )) // set the plot
+
+pl2 <- pl + geom_point(size = 4, shape =1) + geom_smooth(aes(group = 1))
+//group = 1 : means to get a best fit line, linear regression
+// plot shape
+geom_smooth(aes(group = 1),method = 'lm', formula = y~ log(x),se = F,color = 'red')
+// method: linear model, formula: log, se = F : remove gray shade around 
+print(pl2)
+
+//adds text
+geom_text()
+/*
+pl <- ggplot(df,aes(x = CPI,y= HDI,color = Region ))
+pl2 <- pl + geom_point(size = 4, shape =1) + geom_smooth(aes(group = 1),method = 'lm', formula = y~ log(x),se = F,color = 'red') 
+pointsToLabel <- c("Russia", "Venezuela", "Iraq", "Myanmar", "Sudan",
+                   "Afghanistan", "Congo", "Greece", "Argentina", "Brazil",
+                   "India", "Italy", "China", "South Africa", "Spane",
+                   "Botswana", "Cape Verde", "Bhutan", "Rwanda", "France",
+                   "United States", "Germany", "Britain", "Barbados", "Norway", "Japan",
+                   "New Zealand", "Singapore")
+pl3 <- pl2 + geom_text(aes(label = Country), color = "gray20", 
+                       data = subset(df, Country %in% pointsToLabel),check_overlap = TRUE)
+
+pl4 <- pl3 + scale_x_continuous(limit = c(.9,10.5),breaks  = 1:10)
+print(pl4 +theme_economist_white())
+*/
+
+~81. plotly //open source
+//create interactive rep in many ide
+plotly.js // javascript
+
+install.packages('plotly')
+
+library(plotly)
+
+create ggplot2 as usual
+now you can call
+gpl <- ggplotly(pl) // to convert a ggplot into plotly
+//plotly allows more interactive functionality
+
+~83. capstone project
+moneyball problem
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ML
+~85.intro to ML
+
+
+

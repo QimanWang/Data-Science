@@ -1,0 +1,40 @@
+----------------------------------
+Lot18 Code Challenge
+----------------------------------
+
+The purpose of this challenge is for us to get a better idea of how you think,
+organize code and tackle the problems at hand. 
+
+----------------------------------
+
+Acme wines is a mock wine store that delivers wine all over the country. 
+When selling wine there are a number of rules and regulations that Acme 
+must follow.
+
+You've been tasked with building a mock order analyzer that will be used to 
+determine if a data set of orders are considered valid or invalid. Acme often
+gets a large number of orders, so your program will need to be able to process
+a large amount of data quickly and efficiently. You must open and read the 
+provided file (orders.csv) and analyze the data against the validation 
+rules below. Your programs should then print the output to the screen with
+the result
+
+Example output (newline at end of line):
+Vinton Cerf Valid
+Linus Torvalds Invalid
+Rasmus Lerdorf Valid
+Guido van Rossum Valid
+
+Validation rules:
+1) No wine can ship to New Jersey, Connecticut, Pennsylvania, Massachusetts,
+Illinois, Idaho or Oregon
+2) Valid zip codes must be 5 or 9 digits
+3) Email address must be valid
+4) The sum of digits in a zip code may not exceed 20 ("90210": 9+0+2+1+0 = 12)
+
+Bonus points:
+* Application takes a command line argument with the name of the file 
+to process.
+* Your code should be modular and reusable. Assume this is the first pass at a
+tool to build on and maintain.
+* Write unit tests

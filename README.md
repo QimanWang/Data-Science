@@ -1,1 +1,1 @@
-# Data-Science
+# This repo contains all the small data ananlytics related projects/work that I've worked on 
